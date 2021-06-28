@@ -3,9 +3,16 @@ const EventComponent: React.FC = () => {
     console.log(event);
   };
 
+  const onDragHandler = (event: React.DragEvent<HTMLDivElement>) => {
+    console.log(event.clientY);
+  };
+
   return (
     <div>
       <input onChange={onChange} />
+      <div draggable onDragStart={onDragHandler}>
+        Drag Me
+      </div>
     </div>
   );
 };
